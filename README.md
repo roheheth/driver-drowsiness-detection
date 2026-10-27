@@ -147,6 +147,47 @@ ight)$$
    ```
 4. The system will auto-detect the connected ESP32 on the USB COM port, display the real-time HUD with facial landmarks, EAR telemetry, and live GSR conductance level bar. Press `q` to safely exit.
 
+### 3. Running Automated Tests & Hardware-Free Simulation
+- **Automated Mathematical Unit Tests:**  
+  Run the automated validation suite covering EAR, SDNN, GSR slope, and decision logic:
+  ```bash
+  python tests/test_pipeline.py
+  ```
+- **Virtual ESP32 Hardware Simulator:**  
+  To test the vision layer or review telemetry without an ESP32 connected:
+  ```bash
+  python laptop_ai_vision/mock_esp32_simulation.py
+  ```
+
+---
+
+## 📁 Repository Directory Structure
+
+```
+driver-drowsiness-detection/
+├── .gitignore                                           # Standard Git ignore configurations
+├── LICENSE                                              # MIT License
+├── README.md                                            # Comprehensive project documentation
+├── docs/
+│   └── Research_Paper_23BCT0100_23BCT0084.pdf           # Full research paper
+├── esp32_firmware/
+│   ├── esp32_drowsiness_complete/
+│   │   └── esp32_drowsiness_complete.ino                # Full multimodal firmware (ECG SDNN, GSR slope, IMU, buzzer)
+│   └── esp32_drowsiness_fastpath/
+│       └── esp32_drowsiness_fastpath.ino                # Fast-path serial & threshold interlock firmware
+├── hardware/
+│   ├── PINOUT.md                                        # Pinout table, wiring, and sensor specifications
+│   ├── circuit_diagram.png                              # Wiring schematic diagram
+│   ├── bench_prototype.png                              # Physical breadboard prototype photo
+│   └── system_architecture.png                          # System architecture block diagram
+├── laptop_ai_vision/
+│   ├── drowsiness_detection.py                          # MediaPipe Face Mesh EAR & blink rate vision engine
+│   ├── mock_esp32_simulation.py                         # Virtual hardware simulator for desktop testing
+│   └── requirements.txt                                 # Python dependencies (OpenCV, MediaPipe, PySerial)
+└── tests/
+    └── test_pipeline.py                                 # Automated algorithmic unit tests
+```
+
 ---
 
 ## 📊 Bench Validation Results (TRL 3)

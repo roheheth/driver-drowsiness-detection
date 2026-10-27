@@ -14,7 +14,7 @@
 ## 👥 Authors & Academic Credentials
 
 - **Rohith Elindram** — Reg. No: `23BCT0100` (`rohith.elindram@vitstudent.ac.in`)
-- **Ashwin Kumar.S** — Reg. No: `23BCT0084` (`ashwinkumar.s2023@vitstudent.ac.in`)
+- **Ashwin Kumar.S** — Reg. No: `23BCT0084` (`ashwinkumar.s2023a@vitstudent.ac.in`)
 - **Dr. Syamasudha Veeragandham** — Faculty Guide & Corresponding Author (`syamasudha.v@vit.ac.in`)
 
 ---
@@ -104,7 +104,9 @@ $$	ext{EAR}_{	ext{avg}} = rac{	ext{EAR}_{	ext{left}} + 	ext{EAR}_{	ext{right}}}
 - **Fast-path closure**: Asserted when $	ext{EAR}_{	ext{avg}} < 0.22$ persists for $\ge 10$ consecutive frames ($pprox 333	ext{ ms}$).
 
 ### 4. Unified Fused Decision Rule
-$$	ext{ALERT} = [	ext{EYE\_CLOSED} = 1] \lor \left( [	ext{FATIGUE} = 1] \land \left[rac{\Delta\sigma}{\Delta t} < -etaight] \land [	ext{IMU\_stable} = 1] ight)$$
+$$	ext{ALERT} = [	ext{EYE\_CLOSED} = 1] \lor \left( [	ext{FATIGUE} = 1] \land \left[rac{\Delta\sigma}{\Delta t} < -eta
+ight] \land [	ext{IMU\_stable} = 1] 
+ight)$$
 - **Condition 1 (Fast-Path Interlock)**: Sustained eye closure triggers the alarm immediately ($pprox 333	ext{–}400	ext{ ms}$ total latency) irrespective of the physiological state.
 - **Condition 2 (Secondary Cross-Validated Path)**: Fatigue flagged by elevated blink rate ($\ge 25	ext{ bpm}$) is escalated to an alert **only** if corroborated by sympathetic skin conductance degradation and undisturbed vehicle kinematics.
 
